@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 06:09:13 by seungjki          #+#    #+#             */
-/*   Updated: 2022/10/14 08:49:33 by seungjki         ###   ########.fr       */
+/*   Created: 2022/10/11 06:09:40 by seungjki          #+#    #+#             */
+/*   Updated: 2022/10/11 06:09:40 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "get_next_line.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
-# endif
-
-# include <stdlib.h>
-
-typedef struct s_gnl
+int	ft_strlen(char *str)
 {
-	char	*str;
-	char	buff[BUFFER_SIZE + 1];
-	int		endl;
-	int		size;
-	char	*ret;
-}	t_gnl;
+	int	len;
 
-int		ft_strlen(char *str);
-int		indexof(char *str, char c);
-char	*get_next_line(int fd);
+	len = 0;
+	while (str[len])
+		++len;
+	return (len);
+}
 
-#endif
+int	indexof(char *str, char c)
+{
+	int	index;
+
+	index = 0;
+	while (str[index])
+	{
+		if (str[index] == c)
+			return (index);
+		++index;
+	}
+	return (-1);
+}

@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 06:09:04 by seungjki          #+#    #+#             */
-/*   Updated: 2022/10/14 07:52:08 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/10/14 08:48:23 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*concat_size(char *dst, char *src, int src_size)
 {
 	int		len;
 	char	*ret;
-    int		idx;
+	int		idx;
 
 	len = src_size;
 	if (dst)
@@ -64,9 +64,9 @@ char	*get_next_line(int fd)
 	last = NULL;
 	gnl.ret = NULL;
 	gnl.size = 0;
-	read_loop(&gnl, fd); 
+	read_loop(&gnl, fd);
 	gnl.size = ft_strlen(gnl.str);
-	if (gnl.endl++ == -1) 
+	if (gnl.endl++ == -1)
 		gnl.endl = gnl.size;
 	else
 		last = concat_size(NULL, gnl.str + gnl.endl,
